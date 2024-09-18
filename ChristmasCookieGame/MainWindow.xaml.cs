@@ -16,9 +16,26 @@ namespace ChristmasCookieGame
     /// </summary>
     public partial class MainWindow : Window
     {
+        public string message = "Hello World!";
+        public string newMessage = "Merry Christmas!";
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void ClickMeTest_Click(object sender, RoutedEventArgs e)
+        {
+            PopUpWithMessage(message);
+        }
+        public void PopUpWithMessage(string message)
+        {
+            MessageBox.Show(message);
+            UpdateMessage(newMessage);
+        }
+
+        public void UpdateMessage(string newMessage)
+        {
+            message = newMessage;
         }
     }
 }
